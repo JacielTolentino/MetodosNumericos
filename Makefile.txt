@@ -1,0 +1,64 @@
+# Directorios
+SRC_DIR = src
+INCLUDE_DIR = include
+TEMP_DIR = temp
+BIN_DIR = bin
+EXEC = mi_programa
+
+# Definición de variables
+CXX = g++
+CXXFLAGS=--pedantic -Wall -W -Wno-unused-parameter -w -Wl,-subsystem,windows -I$(INCLUDE_DIR)
+LDFLAGS=-lSDL2 -lSDL2_image -lSDL2_ttf -lchipmunk -lSDL2_gfx
+
+
+# Verificar el sistema operativo
+UNAME_S := $(shell uname -s)
+
+ifeq ($(UNAME_S),Linux)
+    CXXFLAGS += -D LINUX_FLAG
+endif
+
+ifeq ($(UNAME_S),Darwin)
+    CXXFLAGS += -D MACOS_FLAG
+endif
+
+ifeq ($(findstring MSYS,$(UNAME_S)),MSYS)
+	SDL_DIR =-IC:\msys64\mingw64\include\SDL2 -LC:\msys64\mingw64\lib
+    CXXFLAGS += $(SDL_DIR)
+	LDFLAGS :=-lmingw32 -lSDL2main $(LDFLAGS)
+endif
+
+
+# Obtener la lista de archivos fuente
+SRCS = $(wildcard $(SRC_DIR)/*.cpp)
+
+# Obtener la lista de archivos objetos
+OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(TEMP_DIR)/%.o, $(SRCS))
+
+# Nombre del ejecutable final
+TARGET = $(BIN_DIR)/$(EXEC)
+
+# Regla para ejecutar el archivo
+run : $(TARGET)
+	./$<
+
+# Regla principal para construir el ejecutable
+$(TARGET): $(OBJS)
+	@mkdir -p $(BIN_DIR)
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
+
+# Regla para compilar cada archivo fuente a un archivo objeto
+$(TEMP_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(TEMP_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Regla para limpiar archivos temporales y el ejecutable
+clean:
+	rm -rf $(TEMP_DIR) $(BIN_DIR)
+
+# Regla para imprimir el sistema operativo
+System : 
+	@echo $(shell uname -s)
+
+# Asegurarse de que las reglas no se confundan con nombres de archivos
+.PHONY: clean run

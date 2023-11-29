@@ -7,7 +7,7 @@ class RungeKutta
 {
 
 private:
-    double x;
+    
 
 
 public:

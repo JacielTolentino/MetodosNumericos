@@ -1,13 +1,27 @@
 #pragma once
 
 #include <iostream>
+#include <RungeKutta.hpp>
 
 class Solucionador
 {
 private:
-    /* data */
+    Parametro P;
+    RungeKutta RK;
 public:
-    Solucionador(/* args */);
+    Solucionador(const Parametro& parametro, const Ecuacion& ecuacion) : P(parametro), RK(P.ObtenerYInicial(), P.ObtenerXInicial(), P.ObtenerYInicial(), P.ObtenerSalto(), P.ObtenerXFinal(), ecuacion)
+    {
+    }
+
+    void ResolverEcuacion ( )
+    {
+     RK.ResolverEcuacion ();
+    }
+
+    double ObtenerResultado ( ) const 
+    {
+     return RK.ObtenerResultado ();
+    }
     ~Solucionador();
 };
 

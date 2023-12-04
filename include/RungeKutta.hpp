@@ -1,8 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <Ecuacion.hpp>
-#include <Solucionador.hpp>
 
 using namespace std;
 class RungeKutta
@@ -12,7 +10,7 @@ private:
     double x, y, ache, X; 
     Ecuacion problema;
 public:
-    RungeKutta(double xo, double yo, double h, double xn, const Ecuacion& ecuacion) : x(xo), y(yo), ache(h), X(xn), problema(ecuacion)
+    RungeKutta(double xo, double yo, double h, double xn, double Y, const Ecuacion& ecuacion) : x(xo), y(yo), ache(h), X(xn), problema(ecuacion)
     {
     }
 

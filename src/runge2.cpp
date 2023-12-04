@@ -1,10 +1,5 @@
 /* ~Incluimos librerias~ */
 #include <iostream>
-#include <Parametro.hpp>
-#include <Ecuacion.hpp>
-#include <Principal.hpp>
-#include <Solucionador.hpp>
-#include <RungeKutta.hpp>
 
 /* ~Se define la ecuacion ordinaria a resolver~ */
 double f(double x, double y)

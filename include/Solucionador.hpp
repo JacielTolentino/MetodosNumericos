@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <RungeKutta.hpp>
+#include <Parametro.hpp>
 
 class Solucionador
 {

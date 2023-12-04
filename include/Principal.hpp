@@ -3,6 +3,7 @@
 #include <iostream>
 #include <Solucionador.hpp>
 #include <Ecuacion.hpp>
+#include <Parametro.hpp>
 
 using namespace std;
 class Principal

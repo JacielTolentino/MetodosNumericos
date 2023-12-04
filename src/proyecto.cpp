@@ -1,7 +1,8 @@
 #include <iostream>
-#include "Parametro.hpp"
-#include "Ecuacion.hpp"
-#include "Principal.hpp"
+#include <Ecuacion.hpp>
+#include <Parametro.hpp>
+#include <Principal.hpp>
+#include <Solucionador.hpp>
 
 int main ( )
 {

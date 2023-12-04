@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <Ecuacion.hpp>
 
 using namespace std;
 class RungeKutta

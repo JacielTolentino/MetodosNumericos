@@ -64,7 +64,7 @@ Para la correcta funcion del programa se debe tener instalados los siguientes co
 
 ## **Funcionamiento**
 
-El codigo implementa 5 clases, un archivo cpp de nombre `proyecto.cpp` y un archivo `Makefile`.
+El codigo implementa 5 clases `Ecuacion, Parametro, Principal, RungeKutta y Solucionador`, un archivo cpp de nombre `proyecto.cpp` y un archivo `Makefile`.
 
 > [!NOTE]
 El programa se ejecuta en terminal y se puede compilar usando el codigo `make run `

@@ -1,4 +1,3 @@
- /* ~Ecuacion ordinaria a resolver~ */
 #pragma once
 
 #include <iostream>
@@ -11,23 +10,24 @@ class Ecuacion
     double y;
 
  public:
-    Ecuacion(double Parametro) : y(Parametro) 
+    Ecuacion(double Parametro) : y(Parametro)
     {   }
 
-    double Evaluar(double x) const
+    double Evaluar(double x, double y) const
     {
      return (y * (x * x)) - 1.2 * x;
     }
 
     void ActualizarSolucion (double k1, double k2, double k3, double k4, double h)
     {
-     y = y + ((h * (k1 + (2 * k2) + (2 * k3) + k4)) /6); 
+     y = y + h/6 * (k1 + (2*k2) + (2*k3) + k4); 
     }
 
     double ObtenerValor( ) const 
     {
      return y;
     }
+
     ~Ecuacion()
     {   }
 };

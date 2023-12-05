@@ -1,0 +1,18 @@
+@startuml RungeKutta
+
+class Ecuacion
+class Parametro
+class Principal 
+class Solucionador
+class RungeKutta
+
+
+Principal --* Ecuacion
+Principal --o Solucionador
+Solucionador --o RungeKutta
+Ecuacion --o Parametro
+RungeKutta --|> Ecuacion
+Parametro  o-- Ecuacion
+RungeKutta --o Parametro
+Solucionador --o Ecuacion
+Principal --* Parametro

@@ -14,6 +14,7 @@ private:
     void ImprimirResultado ( ) const 
     {
      cout<<"Valor aproximado de y("<<solucion.ObtenerResultado()<<")"<<" es "<<solucion.ObtenerResultado()<<endl;
+     cout<<"\n\n\n"<<endl;
     }
 
 public:

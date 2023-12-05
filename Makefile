@@ -1,16 +1,8 @@
 CXX = g++
-#CXXFLAGS = -IC:\msys64\mingw64\include\SDL2 -LC:\msys64\mingw64\lib -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2
-all : RungeKutta tuto1
+all: bin
 
-bin/RungeKutta : src/proyecto.cpp
-	$(CXX) $<  $(CXXFLAGS) -o $@
+bin/bin : src/proyecto.cpp include/*
+	$(CXX) $< -o $@ -I include
 
-bin/tuto1  : src/metodo.cpp
-	$(CXX) $< $(CXXFLAGS) -o $@
-
-run0: bin/RungeKutta
+run: bin/bin
 	./$<
-
-run1 : bin/tuto1
-	./$<
-	

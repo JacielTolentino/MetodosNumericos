@@ -20,8 +20,9 @@ int main ( )
     cin>>xo;
     cout<<"Ingrese el valor de h"<<endl;
     cin>>h;
-    cout<<"Ingrese el valor final para x"<<endl;
+    cout<<"Ingrese el valor final para xn"<<endl;
     cin>>xn;
+    cout<<"\n\n"<<endl;
 
     Parametro parametro(yo, xo, h, xn);
     Principal programas(parametro, Ecuacion(parametro.ObtenerYInicial()));

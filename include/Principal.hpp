@@ -11,9 +11,10 @@ class Principal
 private:
     Solucionador solucion;
 
+
     void ImprimirResultado ( ) const 
     {
-     cout<<"Valor aproximado de y("<<solucion.ObtenerResultado()<<")"<<" es "<<solucion.ObtenerResultado()<<endl;
+     cout<<"Valor aproximado de y es "<<solucion.ObtenerResultado()<<endl;
      cout<<"\n\n\n"<<endl;
     }
 

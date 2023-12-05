@@ -18,6 +18,9 @@ public:
     void ResolverEcuacion ( ) {
         int i=0;
         double k1, k2, k3, k4;
+
+    cout<<"i  \ty  \tx   \th "<<endl;
+	cout<<"----------------------------------------"<<endl;
         while (x < X) {
         // double k1 = ache * problema.Evaluar(x);
         // double k2 = ache * problema.Evaluar(x + (1/2) * ache);
@@ -29,6 +32,7 @@ public:
         k4 = problema.Evaluar(x + ache, y + ache * k3);
         x += ache;
         problema.ActualizarSolucion(k1, k2, k3, k4, ache);
+        cout<<i<<"\t"<<problema.ObtenerValor()<<"\t"<<x<<"\t"<<ache<<"\t"<<endl;
         i++;
         }
 
